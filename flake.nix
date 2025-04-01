@@ -8,7 +8,7 @@
   outputs = { self, nixpkgs }: {
     packages.x86_64-linux = rec {
       hello = nixpkgs.legacyPackages.x86_64-linux.hello;
-      togo = nixpkgs.legacyPackages.x86_64-linux.callPackage ./togo { };
+      togo = nixpkgs.legacyPackages.x86_64-linux.callPackage ./togo/package.nix { };
     };
     defaultPackage.x86_64-linux = self.packages.x86_64-linux.hello;
   };
