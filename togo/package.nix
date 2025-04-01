@@ -6,7 +6,7 @@
 buildGoModule rec {
   pname = "togo";
   version = "0.0.1";
-  src = pkgs.fetchFromGitHub {
+  src = fetchFromGitHub {
     owner = "prime-run";
     repo = "togo";
     rev = "43ff80b62ab3b1983ebea8bcacf7653d993b75ce";
@@ -17,7 +17,7 @@ buildGoModule rec {
     "-s"
     "-w"
   ];
-  meta = with pkgs.lib; {
+  meta = with lib; {
     mainProgram = "togo";
   };
 }
