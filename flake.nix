@@ -3,12 +3,10 @@
 
   outputs = { self }: {
 
-    templates = {
-
-      togo = {
-        path = ./togo;
-        description = "a terminal-based Todo Manager ";
-      };
+    togo = {
+      path = ./togo;
+      description = "a terminal-based Todo Manager ";
     };
+
   };
 }
