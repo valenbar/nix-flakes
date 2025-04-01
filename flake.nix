@@ -1,12 +1,15 @@
 {
-  description = "A collection of flake templates";
+  description = "A collection my custom nix packages";
 
-  outputs = { self }: {
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+  };
 
-    togo = {
-      path = ./togo;
-      description = "a terminal-based Todo Manager ";
+  outputs = { self, nixpkgs }: {
+    packages.x86_64-linux = rec {
+      hello = nixpkgs.legacyPackages.x86_64-linux.hello;
+      togo = nixpkgs.legacyPackages.x86_64-linux.callPackage ./togo { };
     };
-
+    defaultPackage.x86_64-linux = self.packages.x86_64-linux.hello;
   };
 }
