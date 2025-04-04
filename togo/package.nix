@@ -3,13 +3,13 @@
   buildGoModule,
   fetchFromGitHub
 }:
-buildGoModule rec {
+buildGoModule (finalAttrs: {
   pname = "togo";
-  version = "0.0.1";
+  version = "1.0.1";
   src = fetchFromGitHub {
     owner = "prime-run";
     repo = "togo";
-    rev = "43ff80b62ab3b1983ebea8bcacf7653d993b75ce";
+    rev = "v${finalAttrs.version}";
     sha256 = "sha256-0wOovQV/2zxqTNNmVFLOfzAivLY1y9+04OnygUo8v1c=";
   };
   vendorHash = "sha256-7IPI02EXnEiy2OsysxL0xKZl/YASAo6xBXvUeNjYyfU=";
@@ -19,5 +19,6 @@ buildGoModule rec {
   ];
   meta = with lib; {
     mainProgram = "togo";
+    homepage = "https://github.com/prime-run/togo";
   };
-}
+})
