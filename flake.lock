@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "go-typer-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1743879575,
+        "narHash": "sha256-e+2u32YKI2Un37uGjboEQBv8G+aexgRVZG8+4o5AWSo=",
+        "owner": "prime-run",
+        "repo": "go-typer",
+        "rev": "fe3a24483f29d5e6e77cc62b7734c78286acc12b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "prime-run",
+        "repo": "go-typer",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1743689281,
@@ -18,6 +34,7 @@
     },
     "root": {
       "inputs": {
+        "go-typer-src": "go-typer-src",
         "nixpkgs": "nixpkgs"
       }
     }

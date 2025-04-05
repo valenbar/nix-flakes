@@ -3,14 +3,21 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    go-typer-src = {
+      url = "github:prime-run/go-typer";
+      flake = false;
+    };
   };
 
-  outputs = { self, nixpkgs }: {
-    packages.x86_64-linux = rec {
-      hello = nixpkgs.legacyPackages.x86_64-linux.hello;
-      togo = nixpkgs.legacyPackages.x86_64-linux.callPackage ./togo/package.nix { };
-      go-typer = nixpkgs.legacyPackages.x86_64-linux.callPackage ./go-typer/package.nix { };
+  outputs = { self, nixpkgs, go-typer-src }: let
+    system = "x86_64-linux";
+    pkgs = import nixpkgs { inherit system; };
+  in {
+      packages.${system} = {
+        hello = pkgs.hello;
+        togo = pkgs.callPackage ./togo/package.nix { };
+        go-typer = pkgs.callPackage ./go-typer/package.nix { src = go-typer-src; };
+      };
+      defaultPackage.${system} = self.packages.${system}.hello;
     };
-    defaultPackage.x86_64-linux = self.packages.x86_64-linux.hello;
-  };
 }
