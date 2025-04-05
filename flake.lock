@@ -35,7 +35,24 @@
     "root": {
       "inputs": {
         "go-typer-src": "go-typer-src",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "togo-src": "togo-src"
+      }
+    },
+    "togo-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1743784083,
+        "narHash": "sha256-8ENflRp2CAcw/pohjAFI4ZhefJy8G+fTlMyYJlQ8sGI=",
+        "owner": "prime-run",
+        "repo": "togo",
+        "rev": "4be26ff859fd969a2d387947e7e72a5d47362c26",
+        "type": "github"
+      },
+      "original": {
+        "owner": "prime-run",
+        "repo": "togo",
+        "type": "github"
       }
     }
   },
