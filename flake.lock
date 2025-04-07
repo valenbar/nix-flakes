@@ -3,11 +3,11 @@
     "go-typer-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1743879575,
-        "narHash": "sha256-e+2u32YKI2Un37uGjboEQBv8G+aexgRVZG8+4o5AWSo=",
+        "lastModified": 1744060146,
+        "narHash": "sha256-VQVdrMk5nFuXTe2hr99SdnnksMOCsBOGN+K4YWrDP1Y=",
         "owner": "prime-run",
         "repo": "go-typer",
-        "rev": "fe3a24483f29d5e6e77cc62b7734c78286acc12b",
+        "rev": "407493aa54761353b13af95a2d326580f70980e1",
         "type": "github"
       },
       "original": {
@@ -18,11 +18,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1743689281,
-        "narHash": "sha256-y7Hg5lwWhEOgflEHRfzSH96BOt26LaYfrYWzZ+VoVdg=",
+        "lastModified": 1743938762,
+        "narHash": "sha256-UgFYn8sGv9B8PoFpUfCa43CjMZBl1x/ShQhRDHBFQdI=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "2bfc080955153be0be56724be6fa5477b4eefabb",
+        "rev": "74a40410369a1c35ee09b8a1abee6f4acbedc059",
         "type": "github"
       },
       "original": {
