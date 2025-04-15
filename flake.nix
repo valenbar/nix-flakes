@@ -19,8 +19,8 @@
   in {
       packages.${system} = {
         hello = pkgs.hello;
-        togo = pkgs.callPackage ./togo/package.nix { src = togo-src; };
-        go-typer = pkgs.callPackage ./go-typer/package.nix { src = go-typer-src; };
+        togo = pkgs.callPackage ./packages/togo/package.nix { src = togo-src; };
+        go-typer = pkgs.callPackage ./packages/go-typer/package.nix { src = go-typer-src; };
       };
       defaultPackage.${system} = self.packages.${system}.hello;
     };
