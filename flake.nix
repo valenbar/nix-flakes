@@ -21,6 +21,7 @@
         hello = pkgs.hello;
         togo = pkgs.callPackage ./packages/togo/package.nix { src = togo-src; };
         go-typer = pkgs.callPackage ./packages/go-typer/package.nix { src = go-typer-src; };
+        deej = pkgs.callPackage ./packages/deej/package.nix {};
       };
       defaultPackage.${system} = self.packages.${system}.hello;
     };
