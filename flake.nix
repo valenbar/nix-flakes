@@ -22,6 +22,7 @@
         togo = pkgs.callPackage ./packages/togo/package.nix { src = togo-src; };
         go-typer = pkgs.callPackage ./packages/go-typer/package.nix { src = go-typer-src; };
         deej = pkgs.callPackage ./packages/deej/package.nix {};
+        clipse-gui = pkgs.callPackage ./packages/clipse-gui/package.nix {};
       };
       defaultPackage.${system} = self.packages.${system}.hello;
     };
