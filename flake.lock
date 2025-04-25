@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "clipse-gui-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1745530947,
+        "narHash": "sha256-V4i2k8s1xePuE0+9jQPOeFYv8PEWHvZkbD2EJtciIZU=",
+        "owner": "d7omdev",
+        "repo": "clipse-gui",
+        "rev": "6feafbbdde775729811d37d1d532380bcd100047",
+        "type": "github"
+      },
+      "original": {
+        "owner": "d7omdev",
+        "repo": "clipse-gui",
+        "type": "github"
+      }
+    },
     "go-typer-src": {
       "flake": false,
       "locked": {
@@ -34,6 +50,7 @@
     },
     "root": {
       "inputs": {
+        "clipse-gui-src": "clipse-gui-src",
         "go-typer-src": "go-typer-src",
         "nixpkgs": "nixpkgs",
         "togo-src": "togo-src"

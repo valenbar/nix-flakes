@@ -1,12 +1,11 @@
 # https://github.com/d7omdev/clipse-gui#installation--running
-# https://github.com/Daru-san/Snowpkgs/blob/be3712737ce0c9f0921251b25f7747c64e5ba53a/packages/clipse-gui/default.nix#L55
 {
   lib,
   python3,
-  fetchFromGitHub,
   wrapGAppsHook,
   gtk3,
   gobject-introspection,
+  src ? null,
 }:
 
 python3.pkgs.buildPythonApplication rec {
@@ -14,12 +13,7 @@ python3.pkgs.buildPythonApplication rec {
   version = "0.1.1";
   pyproject = true;
 
-  src = fetchFromGitHub {
-    owner = "d7omdev";
-    repo = "clipse-gui";
-    rev = "v${version}";
-    hash = "sha256-7UnlGDPNycdTxpm/fXT6bFJU8U2UGqLgmspNukaFdWk=";
-  };
+  inherit src;
 
   build-system = [
     python3.pkgs.setuptools
