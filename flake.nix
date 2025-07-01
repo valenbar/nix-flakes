@@ -36,6 +36,7 @@
         go-typer = pkgs.callPackage ./packages/go-typer/package.nix { src = go-typer-src; };
         deej = pkgs.callPackage ./packages/deej/package.nix { };
         clipse-gui = pkgs.callPackage ./packages/clipse-gui/package.nix { src = clipse-gui-src; };
+        toutui = pkgs.callPackage ./packages/toutui/package.nix { };
       };
       defaultPackage.${system} = self.packages.${system}.hello;
     };
