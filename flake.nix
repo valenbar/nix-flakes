@@ -1,22 +1,6 @@
 {
   description = "A collection my custom nix packages";
 
-  inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    go-typer-src = {
-      url = "github:prime-run/go-typer";
-      flake = false;
-    };
-    togo-src = {
-      url = "github:prime-run/togo";
-      flake = false;
-    };
-    clipse-gui-src = {
-      url = "github:d7omdev/clipse-gui";
-      flake = false;
-    };
-  };
-
   outputs =
     {
       self,
@@ -37,7 +21,24 @@
         deej = pkgs.callPackage ./packages/deej/package.nix { };
         clipse-gui = pkgs.callPackage ./packages/clipse-gui/package.nix { src = clipse-gui-src; };
         toutui = pkgs.callPackage ./packages/toutui/package.nix { };
+        systemd-manager-tui = pkgs.callPackage ./packages/systemd-manager-tui/package.nix { };
       };
       defaultPackage.${system} = self.packages.${system}.hello;
     };
+
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    go-typer-src = {
+      url = "github:prime-run/go-typer";
+      flake = false;
+    };
+    togo-src = {
+      url = "github:prime-run/togo";
+      flake = false;
+    };
+    clipse-gui-src = {
+      url = "github:d7omdev/clipse-gui";
+      flake = false;
+    };
+  };
 }
