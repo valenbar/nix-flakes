@@ -9,7 +9,7 @@
   stdenv,
   darwin,
   gtk3,
-  webkitgtk,
+  webkitgtk_4_0,
   libappindicator-gtk3,
 }:
 buildGoModule rec {
@@ -37,7 +37,7 @@ buildGoModule rec {
     ++ lib.optionals stdenv.isLinux [
       libappindicator-gtk3
       gtk3
-      webkitgtk
+      webkitgtk_4_0
     ];
 
   ldflags = ["-s" "-w"];
