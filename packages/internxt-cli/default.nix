@@ -71,7 +71,7 @@ stdenv.mkDerivation (finalAttrs: {
   meta = {
     description = "Internxt CLI - Manage your Internxt account from the command line";
     homepage = "https://internxt.com/";
-    license = lib.licenses.unfree;
+    # license = lib.licenses.unfree;
     maintainers = with lib.maintainers; [ ];
     platforms = lib.platforms.all;
   };
