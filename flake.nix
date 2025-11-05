@@ -23,6 +23,7 @@
         toutui = pkgs.callPackage ./packages/toutui/package.nix { };
         systemd-manager-tui = pkgs.callPackage ./packages/systemd-manager-tui/package.nix { };
         audio-share = pkgs.callPackage ./packages/audio-share/package.nix { };
+        internxt-cli = pkgs.callPackage ./packages/internxt-cli/default.nix { };
       };
       defaultPackage.${system} = self.packages.${system}.hello;
     };
