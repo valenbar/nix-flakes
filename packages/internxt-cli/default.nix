@@ -13,7 +13,7 @@
 
 stdenv.mkDerivation (finalAttrs: {
   pname = "internext-cli";
-  version = "1.5.8";
+  version = "1.6.0";
 
   src = fetchFromGitHub {
     owner = "internxt";
