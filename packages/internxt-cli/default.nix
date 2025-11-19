@@ -19,7 +19,7 @@ stdenv.mkDerivation (finalAttrs: {
     owner = "internxt";
     repo = "cli";
     rev = "v${finalAttrs.version}";
-    hash = "sha256-wSQP7YcpMIPkjN3nRTs5bc3ZqBmX9PNLuD4hapRTieY=";
+    hash = "sha256-5O02VcTKIO2u2uu0F3byzUBBzFtZVagidsAD0NVGGqQ=";
   };
 
   # Tip: use diff <filea> <fileb> -ur to create patches
@@ -57,7 +57,7 @@ stdenv.mkDerivation (finalAttrs: {
 
   yarnOfflineCache = fetchYarnDeps {
     yarnLock = finalAttrs.src + "/yarn.lock";
-    hash = "sha256-cgIvT/OSlj3MCCMO1MKGECH6R0y+Zp2qhoe3lzWXG2c=";
+    hash = "sha256-Mh0/uhmJTxhSZWkecmBbQG6o/3/HNmVhyLDKgpg3eJ8=";
   };
 
   nativeBuildInputs = [
