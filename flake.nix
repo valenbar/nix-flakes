@@ -20,10 +20,8 @@
         go-typer = pkgs.callPackage ./packages/go-typer/package.nix { src = go-typer-src; };
         deej = pkgs.callPackage ./packages/deej/package.nix { };
         clipse-gui = pkgs.callPackage ./packages/clipse-gui/package.nix { src = clipse-gui-src; };
-        rmpc = pkgs.callPackage ./packages/rmpc/package.nix { };
         toutui = pkgs.callPackage ./packages/toutui/package.nix { };
         systemd-manager-tui = pkgs.callPackage ./packages/systemd-manager-tui/package.nix { };
-        musicbee = pkgs.callPackage ./packages/musicbee/package.nix { };
         audio-share = pkgs.callPackage ./packages/audio-share/package.nix { };
         hyprviz = pkgs.callPackage ./packages/hyprviz/package.nix { };
         internxt-cli = pkgs.callPackage ./packages/internxt-cli/default.nix { };
