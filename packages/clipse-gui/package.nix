@@ -2,7 +2,7 @@
 {
   lib,
   python3,
-  wrapGAppsHook,
+  wrapGAppsHook3,
   gtk3,
   gobject-introspection,
   src ? null,
@@ -10,7 +10,7 @@
 
 python3.pkgs.buildPythonApplication rec {
   pname = "clipse-gui";
-  version = "0.1.1";
+  version = "0.4.0";
   pyproject = true;
 
   inherit src;
@@ -29,7 +29,7 @@ python3.pkgs.buildPythonApplication rec {
   ];
 
   nativeBuildInputs = [
-    wrapGAppsHook
+    wrapGAppsHook3
     gobject-introspection
   ];
   buildInputs = [
