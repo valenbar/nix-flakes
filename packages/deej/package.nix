@@ -40,7 +40,10 @@ buildGoModule rec {
       webkitgtk_4_0
     ];
 
-  ldflags = ["-s" "-w"];
+  ldflags = [
+    "-s"
+    "-w"
+  ];
 
   postInstall = ''
     mkdir -p $out/bin
@@ -51,7 +54,7 @@ buildGoModule rec {
     description = "Set app volumes with real sliders! deej is an Arduino & Go project to let you build your own hardware mixer for Windows and Linux";
     homepage = "https://github.com/omriharel/deej";
     license = licenses.mit;
-    maintainers = with maintainers; [];
+    maintainers = with maintainers; [ ];
     mainProgram = "deej";
   };
 }

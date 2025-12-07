@@ -8,17 +8,26 @@
       go-typer-src,
       togo-src,
       clipse-gui-src,
+      nixpkgs-deej,
     }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs { inherit system; };
+      pkgs-deej = import nixpkgs-deej {
+        inherit system;
+        config = {
+          permittedInsecurePackages = [ "libsoup-2.74.3" ];
+        };
+      };
     in
     {
       packages.${system} = {
         hello = pkgs.hello;
         togo = pkgs.callPackage ./packages/togo/package.nix { src = togo-src; };
         go-typer = pkgs.callPackage ./packages/go-typer/package.nix { src = go-typer-src; };
-        deej = pkgs.callPackage ./packages/deej/package.nix { };
+        # deej = import ./packages/deej/package.nix (import nixpkgs-deej { inherit system; });
+        # deej = pkgs.callPackage ./packages/deej/package.nix { };
+        deej = pkgs-deej.callPackage ./packages/deej/package.nix { };
         clipse-gui = pkgs.callPackage ./packages/clipse-gui/package.nix { src = clipse-gui-src; };
         toutui = pkgs.callPackage ./packages/toutui/package.nix { };
         audio-share = pkgs.callPackage ./packages/audio-share/package.nix { };
@@ -29,6 +38,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    nixpkgs-deej.url = "github:NixOS/nixpkgs/36226520e9f7a35bf341cbe3b6a1ff9047bec6d9";
     go-typer-src = {
       url = "github:prime-run/go-typer";
       flake = false;
