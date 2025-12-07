@@ -21,9 +21,7 @@
         deej = pkgs.callPackage ./packages/deej/package.nix { };
         clipse-gui = pkgs.callPackage ./packages/clipse-gui/package.nix { src = clipse-gui-src; };
         toutui = pkgs.callPackage ./packages/toutui/package.nix { };
-        systemd-manager-tui = pkgs.callPackage ./packages/systemd-manager-tui/package.nix { };
         audio-share = pkgs.callPackage ./packages/audio-share/package.nix { };
-        hyprviz = pkgs.callPackage ./packages/hyprviz/package.nix { };
         internxt-cli = pkgs.callPackage ./packages/internxt-cli/default.nix { };
       };
       defaultPackage.${system} = self.packages.${system}.hello;
