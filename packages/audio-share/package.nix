@@ -31,6 +31,14 @@ stdenv.mkDerivation {
   ];
 
   postPatch = ''
+    substituteInPlace src/network_manager.cpp \
+      --replace "_ioc->post(" "asio::post(*_ioc, " 
+
+    # If include is missing
+    if ! grep -q "asio/post.hpp" src/network_manager.cpp; then
+      sed -i '1i #include <asio/post.hpp>' src/network_manager.cpp
+    fi
+
     substituteInPlace CMakeLists.txt \
       --replace-warn 'find_package(Protobuf CONFIG REQUIRED)' 'find_package(Protobuf REQUIRED)' \
       --replace-warn 'find_package(asio CONFIG REQUIRED)' "" \
