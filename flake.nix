@@ -32,6 +32,7 @@
         toutui = pkgs.callPackage ./packages/toutui/package.nix { };
         audio-share = pkgs.callPackage ./packages/audio-share/package.nix { };
         internxt-cli = pkgs.callPackage ./packages/internxt-cli/default.nix { };
+        rclone = pkgs.callPackage ./packages/rclone/package.nix { };
       };
       defaultPackage.${system} = self.packages.${system}.hello;
     };
