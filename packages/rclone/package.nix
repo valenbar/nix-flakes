@@ -17,7 +17,7 @@
 
 buildGoModule rec {
   pname = "rclone";
-  version = "1.72.1";
+  version = "1.73.0";
 
   outputs = [
     "out"
@@ -25,14 +25,13 @@ buildGoModule rec {
   ];
 
   src = fetchFromGitHub {
-    owner = "internxt";
+    owner = "rclone";
     repo = "rclone";
-    # tag = "v${version}";
-    rev = "cc0201a2345bfe096d6ab50f556813095582f881";
-    hash = "sha256-So3uIQpIeZsOKwsfwiAUeSd7GkhFDZyl5SuC81tpVKw=";
+    tag = "v${version}";
+    hash = "sha256-g/ofD/KsUOXVTOveHKddPN9PP5bx7HWFPct1IhJDZYE=";
   };
 
-  vendorHash = "sha256-amhKhTDKHDDvP7yqlkZUUMdQPznE+QxoS6RojdyrhIQ=";
+  vendorHash = "sha256-LomeLlk0d/HTL0NKmbd083u7BHsy4FmAah9IzvmtO2s=";
 
   subPackages = [ "." ];
 
@@ -50,7 +49,7 @@ buildGoModule rec {
   ldflags = [
     "-s"
     "-w"
-    "-X github.com/rclone/rclone/fs.Version=v${version}"
+    "-X github.com/rclone/rclone/fs.Version=${src.tag}"
   ];
 
   postConfigure = lib.optionalString (!stdenv.hostPlatform.isDarwin) ''
